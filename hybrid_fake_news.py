@@ -8,8 +8,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 
 # Load datasets
-fake_path = r"C:\Users\lilac\OneDrive\Desktop\fake news detection\archive\fake.csv"
-true_path = r"C:\Users\lilac\OneDrive\Desktop\fake news detection\archive\true.csv"
+fake_path = r"C:\Users\lilac\OneDrive\Desktop\fake news detection\fake.csv"
+true_path = r"C:\Users\lilac\OneDrive\Desktop\fake news detection\true.csv"
 
 fake_data = pd.read_csv(fake_path)
 true_data = pd.read_csv(true_path)
