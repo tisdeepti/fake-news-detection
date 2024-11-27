@@ -28,3 +28,35 @@ This project uses datasets containing fake and true news articles, processes the
 > Prerequisites
 Before running the project, ensure the following libraries are installed:
 pandas, numpy, scikit-learn
+
+> File Structure
+.
+├── fake.csv
+├── true.csv
+├── hybrid_fake_news.py
+├── README.md
+
+> Project Workflow
+  1. Data Preprocessing:
+     - Text is cleaned by removing punctuation, special characters, and URLs.
+     - TF-IDF is applied for feature extraction.
+  2. Model Training:
+     - Logistic Regression is used to classify news articles.
+     - The model is evaluated using metrics like precision, recall, and F1-score.
+  3. Manual Testing:
+     - Users can input news articles to classify them as Fake or True.
+  4. Example Outputs
+    - Input:
+       "Breaking News: The moon has disappeared from the night sky!"
+    - Output:
+        Logistic Regression: Fake News
+  5. Future Enhancements
+    - Incorporate deep learning models like LSTMs for better accuracy.
+    - Add a web interface for easier usability.
+    - Expand the dataset for improved generalization.
+
+> Contributing
+Contributions are welcome! Feel free to fork the repository and submit pull requests.
+
+> License
+This project is licensed under the MIT License.
