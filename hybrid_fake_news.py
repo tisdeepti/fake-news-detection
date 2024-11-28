@@ -8,8 +8,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 
 # Load datasets
-fake_path = r"C:\Users\lilac\OneDrive\Desktop\fake news detection\fake.csv"
-true_path = r"C:\Users\lilac\OneDrive\Desktop\fake news detection\true.csv"
+fake_path = r"C:\Users\lilac\OneDrive\Desktop\fake news detection\archive\fake.csv"
+true_path = r"C:\Users\lilac\OneDrive\Desktop\fake news detection\archive\true.csv"
 
 fake_data = pd.read_csv(fake_path)
 true_data = pd.read_csv(true_path)
@@ -38,7 +38,7 @@ def wordopt(text):
 data['text'] = data['text'].apply(wordopt)
 
 # Use subset of data for faster training
-data = data.sample(10000, random_state=42)  # Optimize with 10,000 rows
+data = data.sample(10000, random_state=42)  # Optimize with 8k rows
 
 # Split into features and target
 x = data['text']
@@ -48,7 +48,7 @@ y = data['class']
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42)
 
 # Vectorization
-vectorizer = TfidfVectorizer(max_features=5000)  # Limit features to 5000
+vectorizer = TfidfVectorizer(max_features=5000)  # Limit features to 5k
 xv_train = vectorizer.fit_transform(x_train)
 xv_test = vectorizer.transform(x_test)
 
@@ -84,7 +84,7 @@ def main():
         print("\nDo you want to test another news article? (yes/no):")
         user_choice = input().strip().lower()
         if user_choice != 'yes':
-            print("\nExiting the program. Goodbye!")
+            print("\nSigning off!")
             break
 
 # Run the main program
